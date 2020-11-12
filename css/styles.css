@@ -146,6 +146,8 @@ h1, h2, h3, h4, p {
   font-weight: 500;
   line-height: 1.17;
   letter-spacing: 0.02em;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav-link:focus,
@@ -186,6 +188,8 @@ h1, h2, h3, h4, p {
   font-weight: 500;
   line-height: 1.17;
   letter-spacing: 0.02em;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contact-link:hover,
@@ -419,6 +423,9 @@ h1, h2, h3, h4, p {
   width: 44px;
   height: 44px;
   border-radius: 50%;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-link:hover,
@@ -459,6 +466,9 @@ h1, h2, h3, h4, p {
   border-style: solid;
   border-width: 1px;
   border-radius: 4px;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients-item + .clients-item {
@@ -547,6 +557,8 @@ h1, h2, h3, h4, p {
   display: inline-block;
   line-height: 1.71;
   color: var(--secondary-white-color);
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .address-item:not(:last-child) {
@@ -588,7 +600,7 @@ h1, h2, h3, h4, p {
   padding-bottom: 94px;
 }
 
-.radio-btn .link {
+.radio-btn-link {
   display: inline-block;
   min-width: 73px;
   padding: 6px 22px;
@@ -607,16 +619,20 @@ h1, h2, h3, h4, p {
   margin-bottom: 50px;
 }
 
-.radio-btn .item + .item{
+.radio-btn-item + .radio-btn-item{
   margin-left: 8px;
 }
 
-.radio-btn .link {
+.radio-btn-link {
   color: var(--title-text-color);
   background-color: var(--secondary-btn-bg-color);
+
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.radio-btn .active {
+.radio-btn-link.active {
   color: var(--primary-white-color);
   background-color: var(--accent-color);
   box-shadow: 
@@ -625,8 +641,8 @@ h1, h2, h3, h4, p {
     0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
-.radio-btn .link:hover,
-.radio-btn .link:focus {
+.radio-btn-link:hover,
+.radio-btn-link:focus {
   color: var(--primary-white-color);
   background-color: var(--accent-color);
   box-shadow: 
@@ -658,12 +674,14 @@ h1, h2, h3, h4, p {
 
 .image-thumb {
   position: relative;
+  overflow: hidden;
 }
 
 .text-desc {
   position: absolute;
   left: 0;
   bottom: 0;
+  transform: translateY(100%);
   width: 100%;
   height: 100%;
   padding: 63px 24px;
@@ -673,10 +691,15 @@ h1, h2, h3, h4, p {
   line-height: 28px;
   color: var(--primary-white-color);
   opacity: 0;
+
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .work-link {
   display: block;
+
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .work-link:hover,
@@ -684,12 +707,13 @@ h1, h2, h3, h4, p {
   box-shadow: 
     0px 1px 1px rgba(0, 0, 0, 0.12), 
     0px 4px 4px rgba(0, 0, 0, 0.06), 
-    1px 4px 6px rgba(0, 0, 0, 0.16);
-    
+    1px 4px 6px rgba(0, 0, 0, 0.16); 
 }
+
 .work-link:hover .text-desc,
 .work-link:focus .text-desc {
   opacity: 1;
+  transform: translateY(0); 
 }
 
 .work-desc {
